@@ -1,5 +1,5 @@
 # docgen
 My document generator script. Requirements:
 ```
-yay -S python-markdown wkhtmltopdf-static
+yay -S zathura-pdf-mupdf ttc-iosevka python-markdown wkhtmltopdf-static
 ```
