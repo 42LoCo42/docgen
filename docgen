@@ -36,8 +36,12 @@ EOF
 		s|^\[BREAK\]$|<div style="page-break-before: always;"></div>|;
 		s|\\$|  |;
 	' "$in" \
+	| awk -f "$(dirname "$(realpath "$0")")/numbers.awk" \
 	| markdown_py \
-		-x fenced_code -x tables -x codehilite -x toc
+		-x codehilite \
+		-x fenced_code \
+		-x tables \
+		-x toc
 	cat << EOF
 	</body>
 </html>
